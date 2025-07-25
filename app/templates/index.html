@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DVSA Test Checker</title>
+</head>
+<body>
+    <h2>Check Driving Test Availability</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label>Driving License:</label><br>
+        <input type="text" name="license" required><br><br>
+
+        <label>Booking Reference:</label><br>
+        <input type="text" name="booking" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <button type="submit">Check Now</button>
+    </form>
+</body>
+</html>
